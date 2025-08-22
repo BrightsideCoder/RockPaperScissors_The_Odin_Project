@@ -21,9 +21,14 @@ function getUserChoice() {
     return userChoice;
 }
 
-function playRound() {
-
+function playRound(userChoice, computerChoice) {
+    if (userChoice == computerChoice) {
+        console.log("It's a tie!")
+    } else if (userChoice == "Paper" && computerChoice == "Rock" || userChoice == "Scissors" && computerChoice == "Paper" || userChoice == "Rock" && computerChoice == "Scissors") {
+                console.log(`User chose: ${userChoice} and the computer chose: ${computerChoice}. User wins!`)
+               } else if ( userChoice == "Paper" && computerChoice == "Scissors" || userChoice == "Scissors" && computerChoice == "Rock" || userChoice == "Rock" && computerChoice == "Paper") {
+                            console.log(`User chose: ${userChoice} and the computer chose: ${computerChoice}. Computer wins...`)
+                           }
 }
 
-console.log(getComputerChoice());
-console.log(getUserChoice());
+playRound(getUserChoice(), getComputerChoice());
